@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import axios from 'axios';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Select, MenuItem } from '@material-ui/core';
 
 function NewMessage ( fetchMessages ) {
 
@@ -28,6 +28,12 @@ function NewMessage ( fetchMessages ) {
           <Button variant="outlined" onClick={ sendMessage }>Send</Button>
         }
       </p>
+      <Select defaultValue='2' onChange={ (e)=>{ alert( e.target.value ) } }>
+        <MenuItem value="0">Text 0</MenuItem>
+        <MenuItem value="1">Text 1</MenuItem>
+        <MenuItem value="2">Text 2</MenuItem>
+        <MenuItem value="3">Text 3</MenuItem> 
+      </Select>
     </div>
   );
 
