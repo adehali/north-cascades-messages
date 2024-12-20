@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import MessagesList from '../MessagesList/MessagesList';
 import NewMessage from '../NewMessage/NewMessage';
-import useStore from '../Store/store';
+import useStore from '../Store/store';  /// IMPORT STORE
 
 function App () {
   useEffect( ()=>{
@@ -11,7 +11,7 @@ function App () {
   
   const [ messages, setMessages ] = useState( [] );
   // connect to the store for faves
-  const favorites = useStore( ( state )=> state.favorites );
+  const favorites = useStore( ( state )=> state.favorites );   /// CONNECTING TO STORE DATA
 
   function fetchMessages(){
     axios.get( '/api/messages' ).then( function( response ){
@@ -26,8 +26,8 @@ function App () {
   return (
     <div>
       <h1>North Cascades Messages</h1>
-      <h1>Favorites:</h1>
-      <p>{ JSON.stringify( favorites ) }</p>
+      <h2>Favorites: {JSON.stringify(favorites)}</h2>
+      
       <NewMessage fetchMessages={ fetchMessages }/>
       <MessagesList messages={ messages }/>
 

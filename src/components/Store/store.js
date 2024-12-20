@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useStore = create( ( set ) =>(
-    //////// above will always be the same
+  
     {
         favorites: [],
         addToFavorites: ( newFavorite )=>{

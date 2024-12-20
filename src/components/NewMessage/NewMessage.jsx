@@ -19,7 +19,7 @@ function NewMessage ( fetchMessages ) {
   return (
     <div>
       <h1>New Message</h1>
-      <p>
+     
         <TextField placeholder='Name' onChange={ (e)=>{ setCurrentMessage( {...currentMessage, name: e.target.value } ) } } />
         <TextField placeholder='Message' onChange={ (e)=>{ setCurrentMessage( {...currentMessage, text: e.target.value } ) } } />
         {
@@ -27,7 +27,7 @@ function NewMessage ( fetchMessages ) {
           <Button disabled variant="outlined" onClick={ sendMessage }>Send</Button> :
           <Button variant="outlined" onClick={ sendMessage }>Send</Button>
         }
-      </p>
+    
       <Select defaultValue='2' onChange={ (e)=>{ alert( e.target.value ) } }>
         <MenuItem value="0">Text 0</MenuItem>
         <MenuItem value="1">Text 1</MenuItem>
